@@ -12,6 +12,7 @@ enum APIError: Error {
     case invalidUrl
     case invalidData(_ error: Error?)
     case failedFetchImage
+    case genericServerError
 }
 
 protocol WebServiceRepresentable: AnyObject {

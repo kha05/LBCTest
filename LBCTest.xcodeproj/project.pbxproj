@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DBF260F320100E67346 /* AppDelegate.swift */; };
 		EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DC1260F320100E67346 /* SceneDelegate.swift */; };
-		EA900DC4260F320100E67346 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DC3260F320100E67346 /* ViewController.swift */; };
-		EA900DC7260F320100E67346 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA900DC5260F320100E67346 /* Main.storyboard */; };
 		EA900DC9260F320300E67346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA900DC8260F320300E67346 /* Assets.xcassets */; };
 		EA900DCC260F320300E67346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA900DCA260F320300E67346 /* LaunchScreen.storyboard */; };
 		EA900DD7260F320300E67346 /* LBCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DD6260F320300E67346 /* LBCTestTests.swift */; };
@@ -38,8 +36,6 @@
 		EA900DBC260F320100E67346 /* LBCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA900DBF260F320100E67346 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA900DC1260F320100E67346 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA900DC3260F320100E67346 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA900DC6260F320100E67346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA900DC8260F320300E67346 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA900DCB260F320300E67346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA900DCD260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +95,7 @@
 		EA900DBE260F320100E67346 /* LBCTest */ = {
 			isa = PBXGroup;
 			children = (
-				EA900DBF260F320100E67346 /* AppDelegate.swift */,
-				EA900DC1260F320100E67346 /* SceneDelegate.swift */,
-				EA900DC3260F320100E67346 /* ViewController.swift */,
-				EA900DC5260F320100E67346 /* Main.storyboard */,
+				EA900DF8260F323400E67346 /* App */,
 				EA900DC8260F320300E67346 /* Assets.xcassets */,
 				EA900DCA260F320300E67346 /* LaunchScreen.storyboard */,
 				EA900DCD260F320300E67346 /* Info.plist */,
@@ -126,6 +119,15 @@
 				EA900DE3260F320300E67346 /* Info.plist */,
 			);
 			path = LBCTestUITests;
+			sourceTree = "<group>";
+		};
+		EA900DF8260F323400E67346 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA900DBF260F320100E67346 /* AppDelegate.swift */,
+				EA900DC1260F320100E67346 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +235,6 @@
 			files = (
 				EA900DCC260F320300E67346 /* LaunchScreen.storyboard in Resources */,
 				EA900DC9260F320300E67346 /* Assets.xcassets in Resources */,
-				EA900DC7260F320100E67346 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA900DC4260F320100E67346 /* ViewController.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +296,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EA900DC5260F320100E67346 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA900DC6260F320100E67346 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA900DCA260F320300E67346 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

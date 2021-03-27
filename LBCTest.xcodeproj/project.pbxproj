@@ -29,6 +29,7 @@
 		EA900E5C260F395700E67346 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E5B260F395700E67346 /* Item.swift */; };
 		EA900E64260F396200E67346 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E63260F396200E67346 /* Category.swift */; };
 		EA900E69260F3D6900E67346 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E68260F3D6900E67346 /* CategoryService.swift */; };
+		EA900E6F260F3F5700E67346 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E6E260F3F5700E67346 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		EA900E5B260F395700E67346 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EA900E63260F396200E67346 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EA900E68260F3D6900E67346 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		EA900E6E260F3F5700E67346 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		EA900DBE260F320100E67346 /* LBCTest */ = {
 			isa = PBXGroup;
 			children = (
+				EA900E6D260F3F4000E67346 /* Helpers */,
 				EA900E5A260F394200E67346 /* Models */,
 				EA900E2B260F363E00E67346 /* Services */,
 				EA900DF8260F323400E67346 /* App */,
@@ -232,6 +235,14 @@
 				EA900E63260F396200E67346 /* Category.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EA900E6D260F3F4000E67346 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E6E260F3F5700E67346 /* ImageCache.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 				EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */,
 				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
 				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
+				EA900E6F260F3F5700E67346 /* ImageCache.swift in Sources */,
 				EA900E2E260F365A00E67346 /* API.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,

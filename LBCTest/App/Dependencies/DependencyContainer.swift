@@ -13,6 +13,9 @@ final class DependencyContainer {
     internal lazy var webService: WebServiceRepresentable = WebService()
     
     internal lazy var itemsService: ItemServiceRepresentable = ItemService(factory: self)
+    internal lazy var categoriesService: CategoryServiceRepresentable = CategoryService(factory: self)
+    
+    internal lazy var imageCache: ImageCacheRepresentable = ImageCache()
 }
 
 extension DependencyContainer: ViewControllerFactory {}

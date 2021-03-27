@@ -10,4 +10,7 @@ import Foundation
 protocol ServiceFactory {
     var webService: WebServiceRepresentable { get }
     var itemsService: ItemServiceRepresentable { get }
+    var categoriesService: CategoryServiceRepresentable { get }
+    
+    var imageCache: ImageCacheRepresentable { get }
 }

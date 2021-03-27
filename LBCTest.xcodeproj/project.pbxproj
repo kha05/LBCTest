@@ -13,6 +13,11 @@
 		EA900DCC260F320300E67346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA900DCA260F320300E67346 /* LaunchScreen.storyboard */; };
 		EA900DD7260F320300E67346 /* LBCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DD6260F320300E67346 /* LBCTestTests.swift */; };
 		EA900DE2260F320300E67346 /* LBCTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DE1260F320300E67346 /* LBCTestUITests.swift */; };
+		EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E00260F32D700E67346 /* AppCoordinator.swift */; };
+		EA900E09260F32E100E67346 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E08260F32E100E67346 /* Coordinator.swift */; };
+		EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E0D260F344700E67346 /* ItemsCoordinator.swift */; };
+		EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E13260F34AD00E67346 /* DependencyContainer.swift */; };
+		EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		EA900DDD260F320300E67346 /* LBCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA900DE1260F320300E67346 /* LBCTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCTestUITests.swift; sourceTree = "<group>"; };
 		EA900DE3260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA900E00260F32D700E67346 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EA900E08260F32E100E67346 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EA900E0D260F344700E67346 /* ItemsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
+		EA900E13260F34AD00E67346 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +134,39 @@
 		EA900DF8260F323400E67346 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EA900E12260F349200E67346 /* Dependencies */,
+				EA900DFF260F32C700E67346 /* Coordinators */,
 				EA900DBF260F320100E67346 /* AppDelegate.swift */,
 				EA900DC1260F320100E67346 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		EA900DFF260F32C700E67346 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E00260F32D700E67346 /* AppCoordinator.swift */,
+				EA900E08260F32E100E67346 /* Coordinator.swift */,
+				EA900E0D260F344700E67346 /* ItemsCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		EA900E12260F349200E67346 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E1B260F34CA00E67346 /* Factories */,
+				EA900E13260F34AD00E67346 /* DependencyContainer.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		EA900E1B260F34CA00E67346 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
+				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
+				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
+				EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */,
+				EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

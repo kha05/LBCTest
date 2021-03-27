@@ -20,6 +20,8 @@
 		EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */; };
 		EA900E22260F358D00E67346 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E21260F358D00E67346 /* ServiceFactory.swift */; };
 		EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E26260F35B200E67346 /* ViewModelFactory.swift */; };
+		EA900E2E260F365A00E67346 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E2D260F365A00E67346 /* API.swift */; };
+		EA900E36260F367B00E67346 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E35260F367B00E67346 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		EA900E21260F358D00E67346 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		EA900E26260F35B200E67346 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		EA900E2D260F365A00E67346 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		EA900E35260F367B00E67346 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		EA900DBE260F320100E67346 /* LBCTest */ = {
 			isa = PBXGroup;
 			children = (
+				EA900E2B260F363E00E67346 /* Services */,
 				EA900DF8260F323400E67346 /* App */,
 				EA900DC8260F320300E67346 /* Assets.xcassets */,
 				EA900DCA260F320300E67346 /* LaunchScreen.storyboard */,
@@ -173,6 +178,23 @@
 				EA900E26260F35B200E67346 /* ViewModelFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		EA900E2B260F363E00E67346 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E2C260F364D00E67346 /* Remote */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EA900E2C260F364D00E67346 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E2D260F365A00E67346 /* API.swift */,
+				EA900E35260F367B00E67346 /* WebService.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA900E36260F367B00E67346 /* WebService.swift in Sources */,
 				EA900E22260F358D00E67346 /* ServiceFactory.swift in Sources */,
 				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
 				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
 				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
+				EA900E2E260F365A00E67346 /* API.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,

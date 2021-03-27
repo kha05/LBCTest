@@ -34,6 +34,8 @@
 		EA900E92260F441C00E67346 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E91260F441C00E67346 /* AsynchronousOperation.swift */; };
 		EA900E9A260F443200E67346 /* ItemOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E99260F443200E67346 /* ItemOperation.swift */; };
 		EA900E9F260F457000E67346 /* CategoryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E9E260F457000E67346 /* CategoryOperation.swift */; };
+		EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EA3260F493600E67346 /* ImageOperation.swift */; };
+		EA900EA9260F497600E67346 /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EA8260F497600E67346 /* ImagesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		EA900E91260F441C00E67346 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		EA900E99260F443200E67346 /* ItemOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOperation.swift; sourceTree = "<group>"; };
 		EA900E9E260F457000E67346 /* CategoryOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOperation.swift; sourceTree = "<group>"; };
+		EA900EA3260F493600E67346 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
+		EA900EA8260F497600E67346 /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				EA900E3A260F382F00E67346 /* ItemsService.swift */,
 				EA900E68260F3D6900E67346 /* CategoryService.swift */,
 				EA900E8B260F43CE00E67346 /* SynchronizationService.swift */,
+				EA900EA8260F497600E67346 /* ImagesService.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				EA900E91260F441C00E67346 /* AsynchronousOperation.swift */,
 				EA900E99260F443200E67346 /* ItemOperation.swift */,
 				EA900E9E260F457000E67346 /* CategoryOperation.swift */,
+				EA900EA3260F493600E67346 /* ImageOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				EA900E69260F3D6900E67346 /* CategoryService.swift in Sources */,
 				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
 				EA900E92260F441C00E67346 /* AsynchronousOperation.swift in Sources */,
+				EA900EA9260F497600E67346 /* ImagesService.swift in Sources */,
 				EA900E5C260F395700E67346 /* Item.swift in Sources */,
 				EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */,
 				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
@@ -445,6 +452,7 @@
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,
 				EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */,
 				EA900E9A260F443200E67346 /* ItemOperation.swift in Sources */,
+				EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */,
 				EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */,
 				EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */,
 				EA900E9F260F457000E67346 /* CategoryOperation.swift in Sources */,

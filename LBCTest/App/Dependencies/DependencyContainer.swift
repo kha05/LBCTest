@@ -14,6 +14,8 @@ final class DependencyContainer {
     
     internal lazy var itemsService: ItemServiceRepresentable = ItemService(factory: self)
     internal lazy var categoriesService: CategoryServiceRepresentable = CategoryService(factory: self)
+    internal lazy var synchronizationService: SynchronizationServiceRepresentable = SynchronizationService(factory: self)
+    internal lazy var imageService: ImagesServiceRepresentable = ImagesService(factory: self)
     
     internal lazy var imageCache: ImageCacheRepresentable = ImageCache()
 }

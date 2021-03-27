@@ -17,6 +17,7 @@ enum APIError: Error {
 
 protocol WebServiceRepresentable: AnyObject {
     func execute(_ request: URLRequest?, result completion: @escaping (Result<Data, Error>) -> Void)
+    func execute(_ url: URL?, result completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 class WebService: WebServiceRepresentable {
@@ -26,6 +27,20 @@ class WebService: WebServiceRepresentable {
         }
         
         let task = URLSession.shared.dataTask(with: apiRequest) { data, response , error in
+            guard let dataFetched = data else {
+                return completion(.failure(APIError.invalidData(error)))
+            }
+            completion(.success(dataFetched))
+        }
+        task.resume()
+    }
+    
+    func execute(_ url: URL?, result completion: @escaping (Result<Data, Error>) -> Void) {
+        guard let apiUrl = url else {
+            return completion(.failure(APIError.invalidUrl))
+        }
+        
+        let task = URLSession.shared.dataTask(with: apiUrl) { data, response , error in
             guard let dataFetched = data else {
                 return completion(.failure(APIError.invalidData(error)))
             }

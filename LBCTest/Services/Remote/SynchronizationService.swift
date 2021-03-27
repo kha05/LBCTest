@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SynchronizeServiceRepresentable {
+protocol SynchronizationServiceRepresentable {
     func synchronize(completion: ((Result<([Item],[Category]), Error>) -> Void)?)
 }
 
-final class SynchronizeService: SynchronizeServiceRepresentable {
+final class SynchronizationService: SynchronizationServiceRepresentable {
     private let factory: ServiceFactory
     
     init(factory: ServiceFactory) {

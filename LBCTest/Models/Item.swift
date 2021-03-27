@@ -14,8 +14,8 @@ struct Item: Equatable {
     let description: String
     let price: NSDecimalNumber
     let createdAt: Date
-    let imageSmallUrl: String?
-    let imageThumbnailUrl: String?
+    let imageSmallUrl: String
+    let imageThumbnailUrl: String
     let isUrgent: Bool
 }
 
@@ -32,8 +32,8 @@ extension Item {
                     description: json.description ?? "",
                     price: NSDecimalNumber(value: price),
                     createdAt: json.creationDate ?? Date(),
-                    imageSmallUrl: json.imagesUrl?.small,
-                    imageThumbnailUrl: json.imagesUrl?.thumb,
+                    imageSmallUrl: json.imagesUrl?.small ?? "",
+                    imageThumbnailUrl: json.imagesUrl?.thumb ?? "",
                     isUrgent: json.isUrgent ?? false)
     }
 }

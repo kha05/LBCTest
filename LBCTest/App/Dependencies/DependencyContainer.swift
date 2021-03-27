@@ -7,8 +7,14 @@
 
 import Foundation
 
-typealias Factory = ViewControllerFactory
+typealias Factory = ViewControllerFactory & ServiceFactory & ViewControllerFactory
 
 final class DependencyContainer {
     
 }
+
+extension DependencyContainer: ViewControllerFactory {}
+
+extension DependencyContainer: ViewModelFactory {}
+
+extension DependencyContainer: ServiceFactory {}

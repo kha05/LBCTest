@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Factory = ViewControllerFactory & ServiceFactory & ViewControllerFactory
+typealias Factory = ViewControllerFactory & ServiceFactory & ViewModelFactory
 
 final class DependencyContainer {
     internal lazy var webService: WebServiceRepresentable = WebService()
@@ -22,6 +22,10 @@ final class DependencyContainer {
 
 extension DependencyContainer: ViewControllerFactory {}
 
-extension DependencyContainer: ViewModelFactory {}
+extension DependencyContainer: ViewModelFactory {
+    func makeItemsViewModel() -> ItemsViewModelRepresentable {
+        return ItemsViewModel(factory: self)
+    }
+}
 
 extension DependencyContainer: ServiceFactory {}

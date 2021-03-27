@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol ItemServiceRepresentable {
     func fetchItems(completion: ((Result<[Item], Error>) -> Void)?)
 }

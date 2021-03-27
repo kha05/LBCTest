@@ -24,7 +24,6 @@ final class ItemOperation: AsynchronousOperation {
             case .failure(let error):
                 self?.error = error
             }
-            
             self?.state = .isFinished
         }
     }

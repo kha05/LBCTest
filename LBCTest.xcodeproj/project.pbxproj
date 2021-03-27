@@ -36,6 +36,9 @@
 		EA900E9F260F457000E67346 /* CategoryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E9E260F457000E67346 /* CategoryOperation.swift */; };
 		EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EA3260F493600E67346 /* ImageOperation.swift */; };
 		EA900EA9260F497600E67346 /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EA8260F497600E67346 /* ImagesService.swift */; };
+		EA900EB1260F6B2B00E67346 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EB0260F6B2B00E67346 /* ItemsViewModel.swift */; };
+		EA900EC0260F934B00E67346 /* ItemsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */; };
+		EA900EC5260F937500E67346 /* EnvironmentMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EC4260F937500E67346 /* EnvironmentMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		EA900E9E260F457000E67346 /* CategoryOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOperation.swift; sourceTree = "<group>"; };
 		EA900EA3260F493600E67346 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
 		EA900EA8260F497600E67346 /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
+		EA900EB0260F6B2B00E67346 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
+		EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModelTests.swift; sourceTree = "<group>"; };
+		EA900EC4260F937500E67346 /* EnvironmentMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 			children = (
 				EA900DD6260F320300E67346 /* LBCTestTests.swift */,
 				EA900DD8260F320300E67346 /* Info.plist */,
+				EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */,
+				EA900EC4260F937500E67346 /* EnvironmentMock.swift */,
 			);
 			path = LBCTestTests;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 		EA900E78260F3FC500E67346 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EA900EB0260F6B2B00E67346 /* ItemsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -449,6 +458,7 @@
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
 				EA900E64260F396200E67346 /* Category.swift in Sources */,
 				EA900E8C260F43CE00E67346 /* SynchronizationService.swift in Sources */,
+				EA900EB1260F6B2B00E67346 /* ItemsViewModel.swift in Sources */,
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,
 				EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */,
 				EA900E9A260F443200E67346 /* ItemOperation.swift in Sources */,
@@ -464,7 +474,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA900EC5260F937500E67346 /* EnvironmentMock.swift in Sources */,
 				EA900DD7260F320300E67346 /* LBCTestTests.swift in Sources */,
+				EA900EC0260F934B00E67346 /* ItemsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

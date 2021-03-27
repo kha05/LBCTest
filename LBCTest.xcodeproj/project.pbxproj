@@ -22,6 +22,12 @@
 		EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E26260F35B200E67346 /* ViewModelFactory.swift */; };
 		EA900E2E260F365A00E67346 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E2D260F365A00E67346 /* API.swift */; };
 		EA900E36260F367B00E67346 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E35260F367B00E67346 /* WebService.swift */; };
+		EA900E3B260F382F00E67346 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E3A260F382F00E67346 /* ItemsService.swift */; };
+		EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E40260F389B00E67346 /* ItemJSON.swift */; };
+		EA900E51260F38C700E67346 /* CategorieJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E50260F38C700E67346 /* CategorieJSON.swift */; };
+		EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E55260F390B00E67346 /* ImageURLJSON.swift */; };
+		EA900E5C260F395700E67346 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E5B260F395700E67346 /* Item.swift */; };
+		EA900E64260F396200E67346 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E63260F396200E67346 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		EA900E26260F35B200E67346 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		EA900E2D260F365A00E67346 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EA900E35260F367B00E67346 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		EA900E3A260F382F00E67346 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		EA900E40260F389B00E67346 /* ItemJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemJSON.swift; sourceTree = "<group>"; };
+		EA900E50260F38C700E67346 /* CategorieJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieJSON.swift; sourceTree = "<group>"; };
+		EA900E55260F390B00E67346 /* ImageURLJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLJSON.swift; sourceTree = "<group>"; };
+		EA900E5B260F395700E67346 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EA900E63260F396200E67346 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 		EA900DBE260F320100E67346 /* LBCTest */ = {
 			isa = PBXGroup;
 			children = (
+				EA900E5A260F394200E67346 /* Models */,
 				EA900E2B260F363E00E67346 /* Services */,
 				EA900DF8260F323400E67346 /* App */,
 				EA900DC8260F320300E67346 /* Assets.xcassets */,
@@ -183,6 +196,7 @@
 		EA900E2B260F363E00E67346 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EA900E3F260F388B00E67346 /* JSON */,
 				EA900E2C260F364D00E67346 /* Remote */,
 			);
 			path = Services;
@@ -193,8 +207,28 @@
 			children = (
 				EA900E2D260F365A00E67346 /* API.swift */,
 				EA900E35260F367B00E67346 /* WebService.swift */,
+				EA900E3A260F382F00E67346 /* ItemsService.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		EA900E3F260F388B00E67346 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E40260F389B00E67346 /* ItemJSON.swift */,
+				EA900E50260F38C700E67346 /* CategorieJSON.swift */,
+				EA900E55260F390B00E67346 /* ImageURLJSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		EA900E5A260F394200E67346 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA900E5B260F395700E67346 /* Item.swift */,
+				EA900E63260F396200E67346 /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,17 +360,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA900E3B260F382F00E67346 /* ItemsService.swift in Sources */,
 				EA900E36260F367B00E67346 /* WebService.swift in Sources */,
 				EA900E22260F358D00E67346 /* ServiceFactory.swift in Sources */,
 				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
+				EA900E5C260F395700E67346 /* Item.swift in Sources */,
+				EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */,
 				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
 				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
 				EA900E2E260F365A00E67346 /* API.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
+				EA900E64260F396200E67346 /* Category.swift in Sources */,
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,
+				EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */,
 				EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */,
 				EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */,
+				EA900E51260F38C700E67346 /* CategorieJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

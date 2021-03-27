@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ServiceFactory {
-    
+    var webService: WebServiceRepresentable { get }
+    var itemsService: ItemServiceRepresentable { get }
 }

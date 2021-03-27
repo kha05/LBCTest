@@ -28,6 +28,7 @@
 		EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E55260F390B00E67346 /* ImageURLJSON.swift */; };
 		EA900E5C260F395700E67346 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E5B260F395700E67346 /* Item.swift */; };
 		EA900E64260F396200E67346 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E63260F396200E67346 /* Category.swift */; };
+		EA900E69260F3D6900E67346 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E68260F3D6900E67346 /* CategoryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		EA900E55260F390B00E67346 /* ImageURLJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLJSON.swift; sourceTree = "<group>"; };
 		EA900E5B260F395700E67346 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EA900E63260F396200E67346 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EA900E68260F3D6900E67346 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				EA900E2D260F365A00E67346 /* API.swift */,
 				EA900E35260F367B00E67346 /* WebService.swift */,
 				EA900E3A260F382F00E67346 /* ItemsService.swift */,
+				EA900E68260F3D6900E67346 /* CategoryService.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				EA900E3B260F382F00E67346 /* ItemsService.swift in Sources */,
 				EA900E36260F367B00E67346 /* WebService.swift in Sources */,
 				EA900E22260F358D00E67346 /* ServiceFactory.swift in Sources */,
+				EA900E69260F3D6900E67346 /* CategoryService.swift in Sources */,
 				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
 				EA900E5C260F395700E67346 /* Item.swift in Sources */,
 				EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */,

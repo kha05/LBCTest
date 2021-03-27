@@ -1,5 +1,5 @@
 //
-//  ItemsService.swift
+//  CategoryService.swift
 //  LBCTest
 //
 //  Created by Ha Kevin on 27/03/2021.
@@ -7,19 +7,16 @@
 
 import Foundation
 
-import Foundation
-
-protocol ItemServiceRepresentable {
-    func fetchItems(completion: ((Result<[Item], Error>) -> Void)?)
+protocol CategoryServiceRepresentable {
+    func fetchCategories(completion: ((Result<[Category], Error>) -> Void)?)
 }
 
-final class ItemService: ItemServiceRepresentable {
+final class CategoryService: CategoryServiceRepresentable {
     private let remote: WebServiceRepresentable
     
     private lazy var jsonDecoder: JSONDecoder = {
-        let decoder = JSONDecoder()
+       let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
     
@@ -27,15 +24,15 @@ final class ItemService: ItemServiceRepresentable {
         self.remote = factory.webService
     }
     
-    func fetchItems(completion: ((Result<[Item], Error>) -> Void)?) {
-        remote.execute(API.fetchItems().request) { [jsonDecoder] (result) in
+    func fetchCategories(completion: ((Result<[Category], Error>) -> Void)?) {
+        remote.execute(API.fetchCategories().request) { [jsonDecoder] (result) in
             switch result {
             case .success(let data):
                 do {
-                    let itemsJson = try jsonDecoder.decode([ItemJSON].self, from: data)
+                    let categoriesJson = try jsonDecoder.decode([CategorieJSON].self, from: data)
                     
-                    let items = itemsJson.compactMap({ Item.toEntity(json: $0) })
-                    completion?(.success(items))
+                    let categories = categoriesJson.compactMap({ Category.toEntity(json: $0) })
+                    completion?(.success(categories))
                     
                 } catch {
                     completion?(.failure(APIError.invalidData(error)))

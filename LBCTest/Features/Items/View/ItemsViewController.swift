@@ -40,26 +40,22 @@ final class ItemsViewController: UIViewController {
         button.backgroundColor = UIColor.orange
         button.layer.borderWidth = 1.5
         button.layer.borderColor = UIColor.white.cgColor
-        button.setImage(arrow.image, for: [])
+        button.setImage(UIImage(named: "arrowUp"), for: [])
+        button.contentMode = .center
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         button.addTarget(self, action: .didTapToTop, for: .touchUpInside)
         return button
     }()
-    
-    private lazy var arrow: UIImageView = {
-        let imageView = UIImageView()
-        let image = UIImage(named: "arrowUp")?.withRenderingMode(.alwaysTemplate)
-        imageView.image = image
-        imageView.tintColor = .white
-        
-        return imageView
-    }()
-    
-    
+
     private let factory: ViewModelFactory
     private(set) lazy var viewModel: ItemsViewModelRepresentable = factory.makeItemsViewModel()
     
-    private var scrollTop: Bool = true
-    private lazy var arrowViewRightConstraint: NSLayoutConstraint = self.arrowButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 55)
+    
+    private let arrowViewVisibleBottomConstant: CGFloat = -12
+    private let arrowViewHiddentBottomConstant: CGFloat = 55
+    private let scrollOffsetY: CGFloat = 10
+    private lazy var arrowViewRightConstraint: NSLayoutConstraint = self.arrowButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: arrowViewHiddentBottomConstant)
     
     
     init(factory: ViewModelFactory) {
@@ -93,7 +89,7 @@ private extension ItemsViewController {
     func setupInterface() {
         view.backgroundColor = .white
         view.addSubview(itemsCollectionView)
-        arrowButton.addSubview(arrow)
+        //arrowButton.addSubview(arrow)
         view.addSubview(arrowButton)
     }
     
@@ -107,10 +103,10 @@ private extension ItemsViewController {
             arrowButton.heightAnchor.constraint(equalToConstant: 50),
             arrowButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             arrowViewRightConstraint,
-            arrow.topAnchor.constraint(equalTo: arrowButton.topAnchor, constant: 16),
-            arrow.leadingAnchor.constraint(equalTo: arrowButton.leadingAnchor, constant: 16),
-            arrow.bottomAnchor.constraint(equalTo: arrowButton.bottomAnchor, constant: -16),
-            arrow.trailingAnchor.constraint(equalTo: arrowButton.trailingAnchor, constant: -16)
+//            arrow.topAnchor.constraint(equalTo: arrowButton.topAnchor, constant: 16),
+//            arrow.leadingAnchor.constraint(equalTo: arrowButton.leadingAnchor, constant: 16),
+//            arrow.bottomAnchor.constraint(equalTo: arrowButton.bottomAnchor, constant: -16),
+//            arrow.trailingAnchor.constraint(equalTo: arrowButton.trailingAnchor, constant: -16)
         ])
     }
     
@@ -153,7 +149,6 @@ extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
-        
         bottomLoader.stopAnimating()
         bottomLoader.removeFromSuperview()
     }
@@ -173,6 +168,15 @@ extension ItemsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension ItemsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > scrollOffsetY {
+            arrowViewRightConstraint.constant = arrowViewVisibleBottomConstant
+        } else {
+            arrowViewRightConstraint.constant = arrowViewHiddentBottomConstant
+        }
+    }
+}
 
 private extension Selector {
     static let didTapToTop = #selector(ItemsViewController.didTapToTop(_:))

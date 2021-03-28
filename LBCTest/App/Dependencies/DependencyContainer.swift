@@ -3,7 +3,7 @@
 //  LBCTest
 //
 //  Created by Ha Kevin on 27/03/2021.
-//
+//#imageLiteral(resourceName: "icons8-arrow-up-50.png")
 
 import Foundation
 

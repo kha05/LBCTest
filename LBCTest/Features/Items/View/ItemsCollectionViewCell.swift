@@ -157,10 +157,9 @@ private extension ItemCollectionViewCell {
     }
     
     func setupConstraints() {
-        
-        titleItemLabel.setContentHuggingPriority(.required, for: .vertical)
-        priceItemLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        categoryItemLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        titleItemLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        priceItemLabel.setContentHuggingPriority(.required, for: .vertical)
+        categoryItemLabel.setContentHuggingPriority(.required, for: .vertical)
         
         NSLayoutConstraint.activate([
             loader.centerXAnchor.constraint(equalTo: itemImage.centerXAnchor),

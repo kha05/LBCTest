@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "icons8-arrow-up-50.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

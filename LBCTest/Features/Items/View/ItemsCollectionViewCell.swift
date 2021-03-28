@@ -85,6 +85,7 @@ final class ItemCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private var index: IndexPath?
     private var viewModel: ItemsViewModelRepresentable?
     
     override func prepareForReuse() {
@@ -93,6 +94,10 @@ final class ItemCollectionViewCell: UICollectionViewCell {
         titleItemLabel.text = ""
         categoryItemLabel.text = ""
         priceItemLabel.text = ""
+        
+        if let currentIndex = index {
+            viewModel?.cancelPrefetchNextItemsImages(at: [currentIndex])
+        }
     }
     
     override init(frame: CGRect) {
@@ -105,17 +110,15 @@ final class ItemCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: ItemsViewModelRepresentable, at index: IndexPath) {
-        itemImage.image = nil
-        
+        self.viewModel = viewModel
+        self.index = index
         titleItemLabel.text = viewModel.itemTitle(at: index)
         categoryItemLabel.text = viewModel.itemCategory(at: index)
         priceItemLabel.text = viewModel.itemPrice(at: index)
         urgentContainer.isHidden = !viewModel.isUrgentItem(at: index)
-        viewModel.itemImage(at: index) { [weak self] (image) in
-            guard let self = self else { return }
-            
-            self.loader.stopAnimating()
-            self.itemImage.image = image
+        viewModel.itemImage(at: index) { [loader, itemImage] (image) in
+            loader.stopAnimating()
+            itemImage.image = image
         }
     }
     

@@ -12,7 +12,7 @@ protocol ItemsViewModelRepresentable: AnyObject {
     var itemsNumber: Int { get }
     
     var reloadItems: (() -> Void)? { get set }
-    var showError: ((String) -> Void)? { get set }
+    var stopLoader: (() -> Void)? { get set }
     
     func item(at index: IndexPath) -> Item?
     func itemImage(at index: IndexPath, completion: ((UIImage?) -> Void)?)
@@ -20,6 +20,9 @@ protocol ItemsViewModelRepresentable: AnyObject {
     func itemCategory(at index: IndexPath) -> String?
     func itemPrice(at index: IndexPath) -> String
     func isUrgentItem(at index: IndexPath) -> Bool
+
+    func prefetchNextItemsImages(at indexPaths: [IndexPath])
+    func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath])
     
     func synchronize()
 }
@@ -35,7 +38,7 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     }
     
     var reloadItems: (() -> Void)?
-    var showError: ((String) -> Void)?
+    var stopLoader: (() -> Void)?
     
     var itemsNumber: Int {
         return items.count
@@ -95,9 +98,18 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
                 DispatchQueue.main.async {
                     self?.reloadItems?()
                 }
-            case .failure(let error):
-                self?.showError?(error.localizedDescription)
+            case .failure(_):
+                self?.stopLoader?()
+
             }
         }
+    }
+    
+    func prefetchNextItemsImages(at indexPaths: [IndexPath]) {
+        factoryService.imageService.prefetchImages(items: items, indexPaths: indexPaths, completion: nil)
+    }
+    
+    func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath]) {
+        factoryService.imageService.cancelPrefetchImages(indexPaths: indexPaths)
     }
 }

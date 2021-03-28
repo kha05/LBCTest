@@ -9,6 +9,14 @@ import Foundation
 import UIKit
 
 final class ItemsViewController: UIViewController {
+    private lazy var loader: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
+            
     private lazy var itemsCollectionView: UICollectionView = {
         let flowLayout = ItemsCollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -88,12 +96,16 @@ private extension ItemsViewController {
     
     func setupInterface() {
         view.backgroundColor = .white
+        view.addSubview(loader)
         view.addSubview(itemsCollectionView)
         view.addSubview(arrowButton)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
+            loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             itemsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0),
             itemsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
             itemsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
@@ -115,13 +127,19 @@ private extension ItemsViewController {
 // MARK: Bindings
 extension ItemsViewController {
     func bindViewModel() {
-        viewModel.reloadItems = { [itemsCollectionView] in
+        viewModel.reloadItems = { [itemsCollectionView, loader] in
+            loader.stopAnimating()
             itemsCollectionView.reloadData()
+        }
+        
+        viewModel.stopLoader = { [loader] in
+            loader.stopAnimating()
         }
     }
     
     func unbindViewModel() {
         viewModel.reloadItems = nil
+        viewModel.stopLoader = nil
     }
 }
 
@@ -142,7 +160,7 @@ extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
         bottomLoader.stopAnimating()
         bottomLoader.removeFromSuperview()

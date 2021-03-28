@@ -10,6 +10,8 @@ import UIKit
 
 protocol ImagesServiceRepresentable {
     func fetchImage(from urlString: String, completion: @escaping (Result<UIImage?, Error>) -> Void)
+    func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?)
+    func cancelPrefetchImages(indexPaths: [IndexPath])
 }
 
 final class ImagesService: ImagesServiceRepresentable {
@@ -43,7 +45,7 @@ final class ImagesService: ImagesServiceRepresentable {
         }
     }
     
-    func prefetchImage(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?) {
+    func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?) {
         for index in indexPaths {
             guard loadingOperations[index] == nil else { return }
             let operation = FetchImageOperation(imageUrl: items[index.row].imageSmallUrl, factory: factory)
@@ -55,7 +57,7 @@ final class ImagesService: ImagesServiceRepresentable {
         }
     }
     
-    func cancelPrefetchImage(indexPaths: [IndexPath]) {
+    func cancelPrefetchImages(indexPaths: [IndexPath]) {
         for index in indexPaths {
             if let operation = loadingOperations[index] {
                 operation.cancel()

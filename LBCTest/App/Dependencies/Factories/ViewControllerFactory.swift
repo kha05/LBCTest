@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ViewControllerFactory {
-    
+    func makeItemsViewController() -> ItemsViewController
 }

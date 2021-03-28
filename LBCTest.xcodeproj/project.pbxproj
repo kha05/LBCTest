@@ -11,7 +11,6 @@
 		EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DC1260F320100E67346 /* SceneDelegate.swift */; };
 		EA900DC9260F320300E67346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA900DC8260F320300E67346 /* Assets.xcassets */; };
 		EA900DCC260F320300E67346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA900DCA260F320300E67346 /* LaunchScreen.storyboard */; };
-		EA900DD7260F320300E67346 /* LBCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DD6260F320300E67346 /* LBCTestTests.swift */; };
 		EA900DE2260F320300E67346 /* LBCTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DE1260F320300E67346 /* LBCTestUITests.swift */; };
 		EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E00260F32D700E67346 /* AppCoordinator.swift */; };
 		EA900E09260F32E100E67346 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E08260F32E100E67346 /* Coordinator.swift */; };
@@ -39,6 +38,9 @@
 		EA900EB1260F6B2B00E67346 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EB0260F6B2B00E67346 /* ItemsViewModel.swift */; };
 		EA900EC0260F934B00E67346 /* ItemsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */; };
 		EA900EC5260F937500E67346 /* EnvironmentMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900EC4260F937500E67346 /* EnvironmentMock.swift */; };
+		EA900ECD2610E87700E67346 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ECC2610E87700E67346 /* ItemsViewController.swift */; };
+		EA900ED22610E8F500E67346 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ED12610E8F500E67346 /* ItemsCollectionViewCell.swift */; };
+		EA900ED72610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ED62610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,6 @@
 		EA900DCB260F320300E67346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA900DCD260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA900DD2260F320300E67346 /* LBCTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA900DD6260F320300E67346 /* LBCTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCTestTests.swift; sourceTree = "<group>"; };
 		EA900DD8260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA900DDD260F320300E67346 /* LBCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA900DE1260F320300E67346 /* LBCTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCTestUITests.swift; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		EA900EB0260F6B2B00E67346 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModelTests.swift; sourceTree = "<group>"; };
 		EA900EC4260F937500E67346 /* EnvironmentMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentMock.swift; sourceTree = "<group>"; };
+		EA900ECC2610E87700E67346 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		EA900ED12610E8F500E67346 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA900ED62610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +166,6 @@
 		EA900DD5260F320300E67346 /* LBCTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA900DD6260F320300E67346 /* LBCTestTests.swift */,
 				EA900DD8260F320300E67346 /* Info.plist */,
 				EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */,
 				EA900EC4260F937500E67346 /* EnvironmentMock.swift */,
@@ -297,6 +300,9 @@
 		EA900E79260F3FCF00E67346 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA900ECC2610E87700E67346 /* ItemsViewController.swift */,
+				EA900ED12610E8F500E67346 /* ItemsCollectionViewCell.swift */,
+				EA900ED62610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
 				EA900E6F260F3F5700E67346 /* ImageCache.swift in Sources */,
 				EA900E2E260F365A00E67346 /* API.swift in Sources */,
+				EA900ED22610E8F500E67346 /* ItemsCollectionViewCell.swift in Sources */,
 				EA900DC0260F320100E67346 /* AppDelegate.swift in Sources */,
 				EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */,
 				EA900E64260F396200E67346 /* Category.swift in Sources */,
@@ -465,7 +472,9 @@
 				EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */,
 				EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */,
 				EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */,
+				EA900ED72610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift in Sources */,
 				EA900E9F260F457000E67346 /* CategoryOperation.swift in Sources */,
+				EA900ECD2610E87700E67346 /* ItemsViewController.swift in Sources */,
 				EA900E51260F38C700E67346 /* CategorieJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +484,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA900EC5260F937500E67346 /* EnvironmentMock.swift in Sources */,
-				EA900DD7260F320300E67346 /* LBCTestTests.swift in Sources */,
 				EA900EC0260F934B00E67346 /* ItemsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

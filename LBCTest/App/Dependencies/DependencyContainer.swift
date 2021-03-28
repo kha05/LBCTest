@@ -20,7 +20,11 @@ final class DependencyContainer {
     internal lazy var imageCache: ImageCacheRepresentable = ImageCache()
 }
 
-extension DependencyContainer: ViewControllerFactory {}
+extension DependencyContainer: ViewControllerFactory {
+    func makeItemsViewController() -> ItemsViewController {
+        return ItemsViewController(factory: self)
+    }
+}
 
 extension DependencyContainer: ViewModelFactory {
     func makeItemsViewModel() -> ItemsViewModelRepresentable {

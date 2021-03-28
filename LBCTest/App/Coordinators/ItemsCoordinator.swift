@@ -20,6 +20,8 @@ final class ItemsCoordinator: Coordinator {
     }
     
     func start() {
+        let viewController = factory.makeItemsViewController()
         
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

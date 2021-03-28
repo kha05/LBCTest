@@ -27,7 +27,6 @@ class EnvironmentMock: XCTestCase {
 }
 
 class FactoryMock: Factory {
-    
     lazy var categoriesService: CategoryServiceRepresentable = CategorieServiceMock()
     
     lazy var synchronizationService: SynchronizationServiceRepresentable = SynchronizationServiceMock()
@@ -44,6 +43,10 @@ class FactoryMock: Factory {
 
     func makeItemsViewModel() -> ItemsViewModelRepresentable {
         return ItemsViewModel(factory: self)
+    }
+    
+    func makeItemsViewController() -> ItemsViewController {
+        return ItemsViewController(factory: self)
     }
 }
 

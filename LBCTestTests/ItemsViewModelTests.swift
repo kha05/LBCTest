@@ -134,10 +134,10 @@ class ItemsViewModelTests: EnvironmentMock {
         
         // WHEN
         viewModel.synchronize()
-        let result = viewModel.itemTitle(at: IndexPath(row: 0, section: 0))
+        let result = viewModel.item(at: IndexPath(row: 0, section: 0))
         
         // THEN
-        XCTAssertEqual(result, item1.title)
+        XCTAssertEqual(result, item1)
         XCTAssertEqual(viewModel.itemsNumber, 1)
     }
     
@@ -150,12 +150,12 @@ class ItemsViewModelTests: EnvironmentMock {
         
         // WHEN
         viewModel.synchronize()
-        let result1 = viewModel.itemTitle(at: IndexPath(row: 0, section: 0))
-        let result2 = viewModel.itemTitle(at: IndexPath(row: 1, section: 0))
+        let result1 = viewModel.item(at: IndexPath(row: 0, section: 0))
+        let result2 = viewModel.item(at: IndexPath(row: 1, section: 0))
         
         // THEN
-        XCTAssertEqual(result1, item1.title)
-        XCTAssertEqual(result2, item2.title)
+        XCTAssertEqual(result1, item1)
+        XCTAssertEqual(result2, item2)
         XCTAssertEqual(viewModel.itemsNumber, 2)
     }
 }

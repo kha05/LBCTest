@@ -106,6 +106,7 @@ final class ItemCollectionViewCell: UICollectionViewCell {
     
     func configure(with viewModel: ItemsViewModelRepresentable, at index: IndexPath) {
         itemImage.image = nil
+        
         titleItemLabel.text = viewModel.itemTitle(at: index)
         categoryItemLabel.text = viewModel.itemCategory(at: index)
         priceItemLabel.text = viewModel.itemPrice(at: index)

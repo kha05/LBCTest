@@ -89,7 +89,6 @@ private extension ItemsViewController {
     func setupInterface() {
         view.backgroundColor = .white
         view.addSubview(itemsCollectionView)
-        //arrowButton.addSubview(arrow)
         view.addSubview(arrowButton)
     }
     
@@ -102,11 +101,7 @@ private extension ItemsViewController {
             arrowButton.widthAnchor.constraint(equalToConstant: 50),
             arrowButton.heightAnchor.constraint(equalToConstant: 50),
             arrowButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            arrowViewRightConstraint,
-//            arrow.topAnchor.constraint(equalTo: arrowButton.topAnchor, constant: 16),
-//            arrow.leadingAnchor.constraint(equalTo: arrowButton.leadingAnchor, constant: 16),
-//            arrow.bottomAnchor.constraint(equalTo: arrowButton.bottomAnchor, constant: -16),
-//            arrow.trailingAnchor.constraint(equalTo: arrowButton.trailingAnchor, constant: -16)
+            arrowViewRightConstraint
         ])
     }
     
@@ -120,8 +115,8 @@ private extension ItemsViewController {
 // MARK: Bindings
 extension ItemsViewController {
     func bindViewModel() {
-        viewModel.reloadItems = { [weak self] in
-            self?.itemsCollectionView.reloadData()
+        viewModel.reloadItems = { [itemsCollectionView] in
+            itemsCollectionView.reloadData()
         }
     }
     

@@ -11,7 +11,6 @@
 		EA900DC2260F320100E67346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DC1260F320100E67346 /* SceneDelegate.swift */; };
 		EA900DC9260F320300E67346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA900DC8260F320300E67346 /* Assets.xcassets */; };
 		EA900DCC260F320300E67346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA900DCA260F320300E67346 /* LaunchScreen.storyboard */; };
-		EA900DE2260F320300E67346 /* LBCTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900DE1260F320300E67346 /* LBCTestUITests.swift */; };
 		EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E00260F32D700E67346 /* AppCoordinator.swift */; };
 		EA900E09260F32E100E67346 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E08260F32E100E67346 /* Coordinator.swift */; };
 		EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900E0D260F344700E67346 /* ItemsCoordinator.swift */; };
@@ -51,13 +50,6 @@
 			remoteGlobalIDString = EA900DBB260F320100E67346;
 			remoteInfo = LBCTest;
 		};
-		EA900DDE260F320300E67346 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EA900DB4260F320100E67346 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA900DBB260F320100E67346;
-			remoteInfo = LBCTest;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +61,6 @@
 		EA900DCD260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA900DD2260F320300E67346 /* LBCTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA900DD8260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA900DDD260F320300E67346 /* LBCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA900DE1260F320300E67346 /* LBCTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCTestUITests.swift; sourceTree = "<group>"; };
-		EA900DE3260F320300E67346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA900E00260F32D700E67346 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EA900E08260F32E100E67346 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EA900E0D260F344700E67346 /* ItemsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
@@ -118,13 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA900DDA260F320300E67346 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -133,7 +115,6 @@
 			children = (
 				EA900DBE260F320100E67346 /* LBCTest */,
 				EA900DD5260F320300E67346 /* LBCTestTests */,
-				EA900DE0260F320300E67346 /* LBCTestUITests */,
 				EA900DBD260F320100E67346 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,7 +124,6 @@
 			children = (
 				EA900DBC260F320100E67346 /* LBCTest.app */,
 				EA900DD2260F320300E67346 /* LBCTestTests.xctest */,
-				EA900DDD260F320300E67346 /* LBCTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,15 +151,6 @@
 				EA900EC4260F937500E67346 /* EnvironmentMock.swift */,
 			);
 			path = LBCTestTests;
-			sourceTree = "<group>";
-		};
-		EA900DE0260F320300E67346 /* LBCTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EA900DE1260F320300E67346 /* LBCTestUITests.swift */,
-				EA900DE3260F320300E67346 /* Info.plist */,
-			);
-			path = LBCTestUITests;
 			sourceTree = "<group>";
 		};
 		EA900DF8260F323400E67346 /* App */ = {
@@ -356,24 +327,6 @@
 			productReference = EA900DD2260F320300E67346 /* LBCTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA900DDC260F320300E67346 /* LBCTestUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA900DEC260F320300E67346 /* Build configuration list for PBXNativeTarget "LBCTestUITests" */;
-			buildPhases = (
-				EA900DD9260F320300E67346 /* Sources */,
-				EA900DDA260F320300E67346 /* Frameworks */,
-				EA900DDB260F320300E67346 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EA900DDF260F320300E67346 /* PBXTargetDependency */,
-			);
-			name = LBCTestUITests;
-			productName = LBCTestUITests;
-			productReference = EA900DDD260F320300E67346 /* LBCTestUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -387,10 +340,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					EA900DD1260F320300E67346 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = EA900DBB260F320100E67346;
-					};
-					EA900DDC260F320300E67346 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = EA900DBB260F320100E67346;
 					};
@@ -411,7 +360,6 @@
 			targets = (
 				EA900DBB260F320100E67346 /* LBCTest */,
 				EA900DD1260F320300E67346 /* LBCTestTests */,
-				EA900DDC260F320300E67346 /* LBCTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,13 +375,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA900DD0260F320300E67346 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA900DDB260F320300E67346 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -488,14 +429,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA900DD9260F320300E67346 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA900DE2260F320300E67346 /* LBCTestUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -503,11 +436,6 @@
 			isa = PBXTargetDependency;
 			target = EA900DBB260F320100E67346 /* LBCTest */;
 			targetProxy = EA900DD3260F320300E67346 /* PBXContainerItemProxy */;
-		};
-		EA900DDF260F320300E67346 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA900DBB260F320100E67346 /* LBCTest */;
-			targetProxy = EA900DDE260F320300E67346 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -721,46 +649,6 @@
 			};
 			name = Release;
 		};
-		EA900DED260F320300E67346 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2XJ9FL2P7Y;
-				INFOPLIST_FILE = LBCTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kevinha.LBCTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LBCTest;
-			};
-			name = Debug;
-		};
-		EA900DEE260F320300E67346 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2XJ9FL2P7Y;
-				INFOPLIST_FILE = LBCTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kevinha.LBCTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LBCTest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -787,15 +675,6 @@
 			buildConfigurations = (
 				EA900DEA260F320300E67346 /* Debug */,
 				EA900DEB260F320300E67346 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EA900DEC260F320300E67346 /* Build configuration list for PBXNativeTarget "LBCTestUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA900DED260F320300E67346 /* Debug */,
-				EA900DEE260F320300E67346 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

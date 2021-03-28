@@ -14,6 +14,7 @@ protocol ItemsViewModelRepresentable: AnyObject {
     var reloadItems: (() -> Void)? { get set }
     var showError: ((String) -> Void)? { get set }
     
+    func item(at index: IndexPath) -> Item?
     func itemImage(at index: IndexPath, completion: ((UIImage?) -> Void)?)
     func itemTitle(at index: IndexPath) -> String
     func itemCategory(at index: IndexPath) -> String?
@@ -25,6 +26,7 @@ protocol ItemsViewModelRepresentable: AnyObject {
 
 final class ItemsViewModel: ItemsViewModelRepresentable {
     private let factoryService: ServiceFactory
+
     private var items: [Item] = []
     private var categories: [Category] = []
     
@@ -37,6 +39,11 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     
     var itemsNumber: Int {
         return items.count
+    }
+    
+    func item(at index: IndexPath) -> Item? {
+        guard index.row < items.count else { return nil }
+        return items[index.row]
     }
     
     func itemCategory(at index: IndexPath) -> String? {

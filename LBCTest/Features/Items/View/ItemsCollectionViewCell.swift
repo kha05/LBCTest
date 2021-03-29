@@ -174,7 +174,7 @@ private extension ItemCollectionViewCell {
             
             urgentContainer.widthAnchor.constraint(equalToConstant: 80),
             urgentContainer.heightAnchor.constraint(equalToConstant: 25),
-            urgentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            urgentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             urgentContainer.topAnchor.constraint(equalTo: itemImage.topAnchor, constant: 8),
             
             urgentLabel.centerXAnchor.constraint(equalTo: urgentContainer.centerXAnchor),

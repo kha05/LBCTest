@@ -15,12 +15,6 @@ final class ItemDetailViewController: UIViewController {
         return scrollView
     }()
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +52,7 @@ final class ItemDetailViewController: UIViewController {
     private lazy var itemImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
         imageView.accessibilityIdentifier = "ItemDetailViewController_ImageView"
@@ -161,11 +155,9 @@ private extension ItemDetailViewController {
         
         urgentContainer.addSubview(urgentLabel)
         
-        contentView.addSubview(itemImage)
-        contentView.addSubview(urgentContainer)
-        contentView.addSubview(stackView)
-        
-        scrollView.addSubview(contentView)
+        scrollView.addSubview(itemImage)
+        scrollView.addSubview(urgentContainer)
+        scrollView.addSubview(stackView)
         
         view.addSubview(scrollView)
     }
@@ -179,36 +171,36 @@ private extension ItemDetailViewController {
             topConstant = 16
         }
         
+        priceItemLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        categoryItemLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        itemDateLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        
+        descriptionItemLabel.setContentHuggingPriority(.required, for: .vertical)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            
             itemImage.heightAnchor.constraint(equalToConstant: view.frame.height/2.4),
-            itemImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: topConstant),
-            itemImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            itemImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            itemImage.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            itemImage.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: topConstant),
+            itemImage.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            itemImage.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             
             urgentContainer.widthAnchor.constraint(equalToConstant: 104),
             urgentContainer.heightAnchor.constraint(equalToConstant: 32.5),
-            urgentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            urgentContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 8),
             urgentContainer.topAnchor.constraint(equalTo: itemImage.topAnchor, constant: 32),
             
             urgentLabel.centerXAnchor.constraint(equalTo: urgentContainer.centerXAnchor),
             urgentLabel.centerYAnchor.constraint(equalTo: urgentContainer.centerYAnchor),
             
             stackView.topAnchor.constraint(equalTo: itemImage.bottomAnchor, constant: 16),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16)
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16)
         ])
     }
 }

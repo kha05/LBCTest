@@ -46,23 +46,22 @@ final class ImagesService: ImagesServiceRepresentable {
     }
     
     func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?) {
-        for index in indexPaths {
-            guard loadingOperations[index] == nil else { return }
-            let operation = FetchImageOperation(imageUrl: items[index.row].imageSmallUrl, factory: factory)
-            loadingOperations[index] = operation
-            
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.operationQueue.addOperation(operation)
+        indexPaths
+            .filter({ loadingOperations[$0] == nil })
+            .forEach { (index) in
+                let operation = FetchImageOperation(imageUrl: items[index.row].imageSmallUrl, factory: factory)
+                loadingOperations[index] = operation
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.operationQueue.addOperation(operation)
+                }
             }
-        }
     }
     
     func cancelPrefetchImages(indexPaths: [IndexPath]) {
-        for index in indexPaths {
-            if let operation = loadingOperations[index] {
-                operation.cancel()
-                loadingOperations.removeValue(forKey: index)
-            }
+        indexPaths.forEach { (index) in
+            loadingOperations[index]?.cancel()
+            loadingOperations.removeValue(forKey: index)
         }
     }
 }

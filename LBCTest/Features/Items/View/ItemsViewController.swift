@@ -21,10 +21,10 @@ final class ItemsViewController: UIViewController {
         let flowLayout = ItemsCollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = self.view.backgroundColor
+        collectionView.backgroundColor = view.backgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        collectionView.prefetchDataSource = self
         collectionView.isPrefetchingEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.alwaysBounceVertical = true
@@ -161,6 +161,17 @@ extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.tapItem(at: indexPath)
+    }
+}
+
+extension ItemsViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView,
+                        prefetchItemsAt indexPaths: [IndexPath]) {
+        viewModel.prefetchNextItemsImages(at: indexPaths)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        viewModel.cancelPrefetchNextItemsImages(at: indexPaths)
     }
 }
 

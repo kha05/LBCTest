@@ -93,13 +93,16 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     
     func synchronize() {
         factory.synchronizationService.synchronize { [weak self] (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success((let items, let categories)):
-                    self?.items = items
-                    self?.categories = categories
+            switch result {
+            case .success((let items, let categories)):
+                self?.items = items
+                self?.categories = categories
+                
+                DispatchQueue.main.async {
                     self?.reloadItems?()
-                case .failure(_):
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
                     self?.stopLoader?()
                 }
             }

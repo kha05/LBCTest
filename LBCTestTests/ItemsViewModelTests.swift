@@ -12,10 +12,13 @@ import XCTest
 
 class ItemsViewModelTests: EnvironmentMock {
     var viewModel: ItemsViewModelRepresentable!
+    var coordinatorMock: ItemsCoordinatorMock!
     
     override func setUp() {
         super.setUp()
         self.viewModel = ItemsViewModel(factory: self.factoryMock)
+        self.coordinatorMock = ItemsCoordinatorMock()
+        self.viewModel.coordinatorDelegate = coordinatorMock
     }
     
     func test_number_of_items_WHEN_no_item_SHOULD_return_0() {
@@ -124,7 +127,7 @@ class ItemsViewModelTests: EnvironmentMock {
         let result = viewModel.itemPrice(at: IndexPath(row: 0, section: 0))
         
         // THEN
-        XCTAssertEqual(result, "1 €")
+        XCTAssertEqual(result, "1\u{00a0}€")
     }
     
     func test_items_WHEN_one_items_is_available_SHOULD_return_one_items() {
@@ -157,5 +160,32 @@ class ItemsViewModelTests: EnvironmentMock {
         XCTAssertEqual(result1, item1)
         XCTAssertEqual(result2, item2)
         XCTAssertEqual(viewModel.itemsNumber, 2)
+    }
+    
+    func test_did_tap_item_at_index_SHOULD_call_coordinator() {
+        // GIVEN
+        let item1 = Item(id: 0, categoryId: 0, title: "Test", description: "", price: NSDecimalNumber.one, createdAt: Date(), imageSmallUrl: "testSmall", imageThumbnailUrl: "testThumbnail", isUrgent: false)
+        self.synchronizationServiceMock.items = [item1]
+        self.synchronizationServiceMock.categories = [LBCTest.Category(id: 0, name: "TestCategory")]
+        
+        // WHEN
+        viewModel.synchronize()
+        viewModel.tapItem(at: IndexPath(row: 0, section: 0))
+        
+        // THEN
+        XCTAssertTrue(coordinatorMock.didTapItemCalled)
+    }
+    
+    func test_did_tap_item_at_index_out_of_bound_SHOULD_NOT_call_coordinator() {
+        // GIVEN
+        let item1 = Item(id: 0, categoryId: 0, title: "Test", description: "", price: NSDecimalNumber.one, createdAt: Date(), imageSmallUrl: "testSmall", imageThumbnailUrl: "testThumbnail", isUrgent: false)
+        self.synchronizationServiceMock.items = [item1]
+        
+        // WHEN
+        viewModel.synchronize()
+        viewModel.tapItem(at: IndexPath(row: 1, section: 0))
+        
+        // THEN
+        XCTAssertFalse(coordinatorMock.didTapItemCalled)
     }
 }

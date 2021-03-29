@@ -128,3 +128,11 @@ class SynchronizationServiceMock: SynchronizationServiceRepresentable {
         completion?(.success((items, categories)))
     }
 }
+
+class ItemsCoordinatorMock: ItemsCoordinatorDelegate {
+    var didTapItemCalled = false
+    
+    func didTapItem(item: Item, categoryName: String) {
+        didTapItemCalled = true
+    }
+}

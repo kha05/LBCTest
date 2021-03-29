@@ -19,7 +19,7 @@ protocol ItemsViewModelRepresentable: AnyObject {
     func itemImage(at index: IndexPath, completion: ((UIImage?) -> Void)?)
     func itemTitle(at index: IndexPath) -> String
     func itemCategory(at index: IndexPath) -> String?
-    func itemPrice(at index: IndexPath) -> String
+    func itemPrice(at index: IndexPath) -> String?
     func isUrgentItem(at index: IndexPath) -> Bool
     
     func tapItem(at index: IndexPath)
@@ -32,13 +32,13 @@ protocol ItemsViewModelRepresentable: AnyObject {
 final class ItemsViewModel: ItemsViewModelRepresentable {
     weak var coordinatorDelegate: ItemsCoordinatorDelegate?
         
-    private let factoryService: ServiceFactory
+    private let factory: ServiceFactory & HelperFactory
 
     private var items: [Item] = []
     private var categories: [Category] = []
     
-    init(factory: ServiceFactory & ViewModelFactory) {
-        self.factoryService = factory
+    init(factory: ServiceFactory & HelperFactory) {
+        self.factory = factory
     }
     
     var reloadItems: (() -> Void)?
@@ -58,9 +58,9 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
         return categories.first(where: { $0.id == items[index.row].categoryId })?.name
     }
     
-    func itemPrice(at index: IndexPath) -> String {
-        guard index.row < items.count else { return "" }
-        return String("\(items[index.row].price) €")
+    func itemPrice(at index: IndexPath) -> String? {
+        guard index.row < items.count else { return nil }
+        return factory.currencyFormatter.formatAmountToString(amount: items[index.row].price)
     }
     
     func itemTitle(at index: IndexPath) -> String {
@@ -79,7 +79,7 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
             return
         }
         
-        factoryService.imageService.fetchImage(from: items[index.row].imageSmallUrl) { (result) in
+        factory.imageService.fetchImage(from: items[index.row].imageSmallUrl) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):
@@ -92,7 +92,7 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     }
     
     func synchronize() {
-        factoryService.synchronizationService.synchronize { [weak self] (result) in
+        factory.synchronizationService.synchronize { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success((let items, let categories)):
@@ -115,10 +115,10 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     }
     
     func prefetchNextItemsImages(at indexPaths: [IndexPath]) {
-        factoryService.imageService.prefetchImages(items: items, indexPaths: indexPaths, completion: nil)
+        factory.imageService.prefetchImages(items: items, indexPaths: indexPaths, completion: nil)
     }
     
     func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath]) {
-        factoryService.imageService.cancelPrefetchImages(indexPaths: indexPaths)
+        factory.imageService.cancelPrefetchImages(indexPaths: indexPaths)
     }
 }

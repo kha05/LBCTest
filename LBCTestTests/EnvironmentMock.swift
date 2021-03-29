@@ -40,13 +40,25 @@ class FactoryMock: Factory {
     lazy var webService: WebServiceRepresentable = WebServiceMock()
     
     lazy var itemsService: ItemServiceRepresentable = ItemsServiceMock()
+    
+    lazy var dateFormatter: DateManagerRepresentable = DateManager()
+    
+    lazy var currencyFormatter: CurrencyFormatterRepresentable = CurrencyFormatter()
 
     func makeItemsViewModel() -> ItemsViewModelRepresentable {
         return ItemsViewModel(factory: self)
     }
     
-    func makeItemsViewController() -> ItemsViewController {
-        return ItemsViewController(factory: self)
+    func makeItemDetailViewModel(item: Item, categoryName: String) -> ItemDetailViewModelRepresentable {
+        return ItemDetailViewModel(item: item, categoryName: categoryName, factory: self)
+    }
+    
+    func makeItemsViewController(viewModel: ItemsViewModelRepresentable) -> ItemsViewController {
+        return ItemsViewController(viewModel: viewModel)
+    }
+    
+    func makeItemDetailViewController(viewModel: ItemDetailViewModelRepresentable) -> ItemDetailViewController {
+        return ItemDetailViewController(viewModel: viewModel)
     }
 }
 

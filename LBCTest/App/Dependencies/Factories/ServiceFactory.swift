@@ -13,7 +13,4 @@ protocol ServiceFactory {
     var categoriesService: CategoryServiceRepresentable { get }
     var synchronizationService: SynchronizationServiceRepresentable { get }
     var imageService: ImagesServiceRepresentable { get }
-    
-    var imageCache: ImageCacheRepresentable { get }
-    var dateFormatter: DateManagerRepresentable { get }
 }

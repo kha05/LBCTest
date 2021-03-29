@@ -27,7 +27,7 @@ final class ItemDetailViewModel: ItemDetailViewModelRepresentable {
     private let imageService: ImagesServiceRepresentable
     private let dateFormatter: DateManagerRepresentable
     
-    init(item: Item, categoryName: String, factory: ServiceFactory) {
+    init(item: Item, categoryName: String, factory: ServiceFactory & HelperFactory) {
         self.item = item
         self.categoryName = categoryName
         self.itemService = factory.itemsService

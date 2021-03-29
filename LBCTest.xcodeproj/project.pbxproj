@@ -43,6 +43,8 @@
 		EA900F272611225700E67346 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F262611225700E67346 /* ItemDetailViewController.swift */; };
 		EA900F2D261122E800E67346 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F2C261122E800E67346 /* ItemDetailViewModel.swift */; };
 		EA900F312611236500E67346 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F302611236500E67346 /* DateManager.swift */; };
+		EA900F392611D3E600E67346 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F382611D3E600E67346 /* CurrencyFormatter.swift */; };
+		EA900F3F2611D43700E67346 /* HelperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F3E2611D43700E67346 /* HelperFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		EA900F262611225700E67346 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		EA900F2C261122E800E67346 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		EA900F302611236500E67346 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		EA900F382611D3E600E67346 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		EA900F3E2611D43700E67346 /* HelperFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 				EA900E1C260F34E100E67346 /* ViewControllerFactory.swift */,
 				EA900E21260F358D00E67346 /* ServiceFactory.swift */,
 				EA900E26260F35B200E67346 /* ViewModelFactory.swift */,
+				EA900F3E2611D43700E67346 /* HelperFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			children = (
 				EA900E6E260F3F5700E67346 /* ImageCache.swift */,
 				EA900F302611236500E67346 /* DateManager.swift */,
+				EA900F382611D3E600E67346 /* CurrencyFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,9 +449,11 @@
 				EA900E8C260F43CE00E67346 /* SynchronizationService.swift in Sources */,
 				EA900EB1260F6B2B00E67346 /* ItemsViewModel.swift in Sources */,
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,
+				EA900F392611D3E600E67346 /* CurrencyFormatter.swift in Sources */,
 				EA900F272611225700E67346 /* ItemDetailViewController.swift in Sources */,
 				EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */,
 				EA900E9A260F443200E67346 /* ItemOperation.swift in Sources */,
+				EA900F3F2611D43700E67346 /* HelperFactory.swift in Sources */,
 				EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */,
 				EA900E14260F34AD00E67346 /* DependencyContainer.swift in Sources */,
 				EA900E0E260F344700E67346 /* ItemsCoordinator.swift in Sources */,

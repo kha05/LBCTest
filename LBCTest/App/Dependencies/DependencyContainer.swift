@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Factory = ViewControllerFactory & ServiceFactory & ViewModelFactory
+typealias Factory = ViewControllerFactory & ServiceFactory & ViewModelFactory & HelperFactory
 
 final class DependencyContainer {
     internal lazy var webService: WebServiceRepresentable = WebService()
@@ -19,6 +19,7 @@ final class DependencyContainer {
     
     internal lazy var imageCache: ImageCacheRepresentable = ImageCache()
     internal lazy var dateFormatter: DateManagerRepresentable = DateManager()
+    internal lazy var currencyFormatter: CurrencyFormatterRepresentable = CurrencyFormatter()
 }
 
 extension DependencyContainer: ViewControllerFactory {
@@ -42,3 +43,4 @@ extension DependencyContainer: ViewModelFactory {
 }
 
 extension DependencyContainer: ServiceFactory {}
+extension DependencyContainer: HelperFactory {}

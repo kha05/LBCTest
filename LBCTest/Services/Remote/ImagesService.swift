@@ -15,12 +15,12 @@ protocol ImagesServiceRepresentable {
 }
 
 final class ImagesService: ImagesServiceRepresentable {
-    private let factory: ServiceFactory
+    private let factory: ServiceFactory & HelperFactory
     
     private lazy var operationQueue: OperationQueue = OperationQueue()
     private var loadingOperations: [IndexPath: FetchImageOperation] = [:]
     
-    init(factory: ServiceFactory) {
+    init(factory: ServiceFactory & HelperFactory) {
         self.factory = factory
     }
     

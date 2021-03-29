@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol ItemsViewModelRepresentable: AnyObject {
+    var coordinatorDelegate: ItemsCoordinatorDelegate? { get set }
     var itemsNumber: Int { get }
     
     var reloadItems: (() -> Void)? { get set }
@@ -20,7 +21,8 @@ protocol ItemsViewModelRepresentable: AnyObject {
     func itemCategory(at index: IndexPath) -> String?
     func itemPrice(at index: IndexPath) -> String
     func isUrgentItem(at index: IndexPath) -> Bool
-
+    
+    func tapItem(at index: IndexPath)
     func prefetchNextItemsImages(at indexPaths: [IndexPath])
     func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath])
     
@@ -28,6 +30,8 @@ protocol ItemsViewModelRepresentable: AnyObject {
 }
 
 final class ItemsViewModel: ItemsViewModelRepresentable {
+    weak var coordinatorDelegate: ItemsCoordinatorDelegate?
+        
     private let factoryService: ServiceFactory
 
     private var items: [Item] = []
@@ -82,7 +86,6 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
                     completion?(image)
                 case .failure(_):
                     completion?(UIImage(named: "emptyPlaceholder"))
-
                     }
                 }
             }
@@ -90,19 +93,25 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
     
     func synchronize() {
         factoryService.synchronizationService.synchronize { [weak self] (result) in
-            switch result {
-            case .success((let items, let categories)):
-                self?.items = items
-                self?.categories = categories
-                
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success((let items, let categories)):
+                    self?.items = items
+                    self?.categories = categories
                     self?.reloadItems?()
+                case .failure(_):
+                    self?.stopLoader?()
                 }
-            case .failure(_):
-                self?.stopLoader?()
-
             }
         }
+    }
+    
+    func tapItem(at index: IndexPath) {
+        guard index.row < items.count,
+              let item = item(at: index),
+              let category = itemCategory(at: index) else { return }
+        
+        coordinatorDelegate?.didTapItem(item: item, categoryName: category)
     }
     
     func prefetchNextItemsImages(at indexPaths: [IndexPath]) {

@@ -85,7 +85,13 @@ class ImageServiceMock: ImagesServiceRepresentable {
         completion(.success(image))
     }
     
+    func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?) {
+        
+    }
     
+    func cancelPrefetchImages(indexPaths: [IndexPath]) {
+        
+    }
 }
 
 class ImageCacheMock: ImageCacheRepresentable {

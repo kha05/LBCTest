@@ -8,9 +8,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    var appCoordinator: AppCoordinator?
     var window: UIWindow?
-
 
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,10 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dependencyContainer = DependencyContainer()
         
         if let window = window {
-            let appCoordinator = AppCoordinator(window: window, factory: dependencyContainer)
-            appCoordinator.start()
+            appCoordinator = AppCoordinator(window: window, factory: dependencyContainer)
+            appCoordinator?.start()
         }
-        
     }
 
     @available(iOS 13.0, *)

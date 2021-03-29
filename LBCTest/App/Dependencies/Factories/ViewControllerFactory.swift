@@ -8,5 +8,6 @@
 import Foundation
 
 protocol ViewControllerFactory {
-    func makeItemsViewController() -> ItemsViewController
+    func makeItemsViewController(viewModel: ItemsViewModelRepresentable) -> ItemsViewController
+    func makeItemDetailViewController(viewModel: ItemDetailViewModelRepresentable) -> ItemDetailViewController
 }

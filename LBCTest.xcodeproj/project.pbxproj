@@ -40,6 +40,9 @@
 		EA900ECD2610E87700E67346 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ECC2610E87700E67346 /* ItemsViewController.swift */; };
 		EA900ED22610E8F500E67346 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ED12610E8F500E67346 /* ItemsCollectionViewCell.swift */; };
 		EA900ED72610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900ED62610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift */; };
+		EA900F272611225700E67346 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F262611225700E67346 /* ItemDetailViewController.swift */; };
+		EA900F2D261122E800E67346 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F2C261122E800E67346 /* ItemDetailViewModel.swift */; };
+		EA900F312611236500E67346 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F302611236500E67346 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		EA900ECC2610E87700E67346 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		EA900ED12610E8F500E67346 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA900ED62610E97F00E67346 /* ItemsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		EA900F262611225700E67346 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		EA900F2C261122E800E67346 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		EA900F302611236500E67346 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				EA900E6E260F3F5700E67346 /* ImageCache.swift */,
+				EA900F302611236500E67346 /* DateManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 		EA900E76260F3FA000E67346 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EA900F232611221E00E67346 /* ItemsDetail */,
 				EA900E77260F3FA600E67346 /* Items */,
 			);
 			path = Features;
@@ -287,6 +295,31 @@
 				EA900EA3260F493600E67346 /* ImageOperation.swift */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		EA900F232611221E00E67346 /* ItemsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EA900F252611222E00E67346 /* ViewModel */,
+				EA900F242611222900E67346 /* View */,
+			);
+			path = ItemsDetail;
+			sourceTree = "<group>";
+		};
+		EA900F242611222900E67346 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA900F262611225700E67346 /* ItemDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA900F252611222E00E67346 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA900F2C261122E800E67346 /* ItemDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,10 +426,12 @@
 				EA900E22260F358D00E67346 /* ServiceFactory.swift in Sources */,
 				EA900E69260F3D6900E67346 /* CategoryService.swift in Sources */,
 				EA900E09260F32E100E67346 /* Coordinator.swift in Sources */,
+				EA900F312611236500E67346 /* DateManager.swift in Sources */,
 				EA900E92260F441C00E67346 /* AsynchronousOperation.swift in Sources */,
 				EA900EA9260F497600E67346 /* ImagesService.swift in Sources */,
 				EA900E5C260F395700E67346 /* Item.swift in Sources */,
 				EA900E56260F390B00E67346 /* ImageURLJSON.swift in Sources */,
+				EA900F2D261122E800E67346 /* ItemDetailViewModel.swift in Sources */,
 				EA900E1D260F34E100E67346 /* ViewControllerFactory.swift in Sources */,
 				EA900E01260F32D700E67346 /* AppCoordinator.swift in Sources */,
 				EA900E6F260F3F5700E67346 /* ImageCache.swift in Sources */,
@@ -408,6 +443,7 @@
 				EA900E8C260F43CE00E67346 /* SynchronizationService.swift in Sources */,
 				EA900EB1260F6B2B00E67346 /* ItemsViewModel.swift in Sources */,
 				EA900E27260F35B200E67346 /* ViewModelFactory.swift in Sources */,
+				EA900F272611225700E67346 /* ItemDetailViewController.swift in Sources */,
 				EA900E41260F389B00E67346 /* ItemJSON.swift in Sources */,
 				EA900E9A260F443200E67346 /* ItemOperation.swift in Sources */,
 				EA900EA4260F493600E67346 /* ImageOperation.swift in Sources */,

@@ -9,4 +9,5 @@ import Foundation
 
 protocol ViewModelFactory {
     func makeItemsViewModel() -> ItemsViewModelRepresentable
+    func makeItemDetailViewModel(item: Item, categoryName: String) -> ItemDetailViewModelRepresentable
 }

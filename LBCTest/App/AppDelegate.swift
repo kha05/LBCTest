@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    var appCoordinator: AppCoordinator?
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let dependencyContainer = DependencyContainer()
             
             if let window = window {
-                let appCoordinator = AppCoordinator(window: window, factory: dependencyContainer)
-                appCoordinator.start()
+                appCoordinator = AppCoordinator(window: window, factory: dependencyContainer)
+                appCoordinator?.start()
             }
             
             return true

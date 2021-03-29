@@ -6,11 +6,9 @@
 //
 
 import Foundation
-
-import Foundation
 import UIKit
 
-final class AppCoordinator: NSObject, Coordinator {
+final class AppCoordinator: Coordinator {
     let window: UIWindow
     var childCoordinators: [Coordinator] = []
     let factory: Factory
@@ -24,7 +22,6 @@ final class AppCoordinator: NSObject, Coordinator {
     init(window: UIWindow, factory: Factory) {
         self.window = window
         self.factory = factory
-        super.init()
     }
 }
 

@@ -15,4 +15,5 @@ protocol ServiceFactory {
     var imageService: ImagesServiceRepresentable { get }
     
     var imageCache: ImageCacheRepresentable { get }
+    var dateFormatter: DateManagerRepresentable { get }
 }

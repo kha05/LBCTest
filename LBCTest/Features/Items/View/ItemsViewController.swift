@@ -56,9 +56,7 @@ final class ItemsViewController: UIViewController {
         return button
     }()
 
-    private let factory: ViewModelFactory
-    private(set) lazy var viewModel: ItemsViewModelRepresentable = factory.makeItemsViewModel()
-    
+    private let viewModel: ItemsViewModelRepresentable
     
     private let arrowViewVisibleBottomConstant: CGFloat = -12
     private let arrowViewHiddentBottomConstant: CGFloat = 55
@@ -66,8 +64,8 @@ final class ItemsViewController: UIViewController {
     private lazy var arrowViewRightConstraint: NSLayoutConstraint = self.arrowButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: arrowViewHiddentBottomConstant)
     
     
-    init(factory: ViewModelFactory) {
-        self.factory = factory
+    init(viewModel: ItemsViewModelRepresentable) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         title = "Leboncoin"
         setup()
@@ -160,24 +158,9 @@ extension ItemsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
-        bottomLoader.stopAnimating()
-        bottomLoader.removeFromSuperview()
-    }
-}
-
-extension ItemsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 80)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        if viewModel.itemsNumber > 0  {
-            return CGSize(width:(collectionView.frame.size.width), height: 100.0)
-        }
-        return CGSize.zero
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.tapItem(at: indexPath)
     }
 }
 

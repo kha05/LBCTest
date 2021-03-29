@@ -10,10 +10,16 @@ import UIKit
 
 final class ItemsViewController: UIViewController {
     private lazy var loader: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .large
+        } else {
+            activityIndicator.style = .gray
+        }
+        
+        activityIndicator.layer.cornerRadius = 8
+        activityIndicator.layer.opacity = 0.7
         return activityIndicator
     }()
             
@@ -74,7 +80,10 @@ final class ItemsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.synchronize()
+        loader.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.viewModel.synchronize()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -94,9 +103,9 @@ private extension ItemsViewController {
     
     func setupInterface() {
         view.backgroundColor = .white
-        view.addSubview(loader)
         view.addSubview(itemsCollectionView)
         view.addSubview(arrowButton)
+        view.addSubview(loader)
     }
     
     func setupConstraints() {

@@ -81,9 +81,7 @@ final class ItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.viewModel.synchronize()
-        }
+        viewModel.synchronize()
     }
     
     required init?(coder: NSCoder) {

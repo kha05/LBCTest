@@ -10,7 +10,8 @@ import UIKit
 
 protocol ImagesServiceRepresentable {
     func fetchImage(from urlString: String, completion: @escaping (Result<UIImage?, Error>) -> Void)
-    func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?)
+    func cancelFetchImage(urlString: String)
+    func prefetchImages(items: [Item], indexPaths: [IndexPath])
     func cancelPrefetchImages(indexPaths: [IndexPath])
 }
 
@@ -45,9 +46,16 @@ final class ImagesService: ImagesServiceRepresentable {
         }
     }
     
-    func prefetchImages(items: [Item], indexPaths: [IndexPath], completion: ((Result<UIImage, Error>) -> Void)?) {
+    func cancelFetchImage(urlString: String) {
+        let url = URL(string: urlString)
+        DispatchQueue.global().async {
+            self.factory.webService.cancel(url)
+        }
+    }
+    
+    func prefetchImages(items: [Item], indexPaths: [IndexPath]) {
         indexPaths
-            .filter({ loadingOperations[$0] == nil })
+            .filter({ loadingOperations[$0] == nil && $0.row < items.count })
             .forEach { (index) in
                 let operation = FetchImageOperation(imageUrl: items[index.row].imageSmallUrl, factory: factory)
                 loadingOperations[index] = operation

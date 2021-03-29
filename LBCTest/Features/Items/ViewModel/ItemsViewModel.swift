@@ -23,6 +23,7 @@ protocol ItemsViewModelRepresentable: AnyObject {
     func isUrgentItem(at index: IndexPath) -> Bool
     
     func tapItem(at index: IndexPath)
+    func cancelFetchImage(at index: IndexPath)
     func prefetchNextItemsImages(at indexPaths: [IndexPath])
     func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath])
     
@@ -117,8 +118,13 @@ final class ItemsViewModel: ItemsViewModelRepresentable {
         coordinatorDelegate?.didTapItem(item: item, categoryName: category)
     }
     
+    func cancelFetchImage(at index: IndexPath) {
+        guard let item = item(at: index) else { return }
+        factory.imageService.cancelFetchImage(urlString: item.imageSmallUrl)
+    }
+    
     func prefetchNextItemsImages(at indexPaths: [IndexPath]) {
-        factory.imageService.prefetchImages(items: items, indexPaths: indexPaths, completion: nil)
+        factory.imageService.prefetchImages(items: items, indexPaths: indexPaths)
     }
     
     func cancelPrefetchNextItemsImages(at indexPaths: [IndexPath]) {

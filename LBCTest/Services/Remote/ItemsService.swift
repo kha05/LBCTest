@@ -26,7 +26,7 @@ final class ItemService: ItemServiceRepresentable {
     }
     
     func fetchItems(completion: ((Result<[Item], Error>) -> Void)?) {
-        remote.execute(API.fetchItems().request) { [jsonDecoder] (result) in
+        remote.execute(API.fetchItems().request?.url) { [jsonDecoder] (result) in
             switch result {
             case .success(let data):
                 do {

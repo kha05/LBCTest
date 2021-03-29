@@ -96,7 +96,7 @@ final class ItemCollectionViewCell: UICollectionViewCell {
         priceItemLabel.text = ""
         
         if let currentIndex = index {
-            viewModel?.cancelPrefetchNextItemsImages(at: [currentIndex])
+            viewModel?.cancelFetchImage(at: currentIndex)
         }
     }
     

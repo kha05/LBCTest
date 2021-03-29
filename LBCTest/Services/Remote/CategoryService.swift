@@ -25,7 +25,7 @@ final class CategoryService: CategoryServiceRepresentable {
     }
     
     func fetchCategories(completion: ((Result<[Category], Error>) -> Void)?) {
-        remote.execute(API.fetchCategories().request) { [jsonDecoder] (result) in
+        remote.execute(API.fetchCategories().request?.url) { [jsonDecoder] (result) in
             switch result {
             case .success(let data):
                 do {

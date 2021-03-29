@@ -11,16 +11,9 @@ import XCTest
 
 class EnvironmentMock: XCTestCase {
     var factoryMock: FactoryMock!
-    var itemsServiceMock: ItemsServiceMock!
-    var synchronizationServiceMock: SynchronizationServiceMock!
-    var imageCacheMock: ImageCacheMock!
-    var imageServiceMock: ImageServiceMock!
 
     override func setUp() {
         factoryMock = FactoryMock()
-        synchronizationServiceMock = (factoryMock.synchronizationService as! SynchronizationServiceMock)
-        imageCacheMock = (factoryMock.imageCache as! ImageCacheMock)
-        imageServiceMock = (factoryMock.imageService as! ImageServiceMock)
         super.setUp()
         
     }
@@ -35,11 +28,9 @@ class FactoryMock: Factory {
     
     lazy var imageCache: ImageCacheRepresentable = ImageCacheMock()
     
-    lazy var itemsServiceMock: ItemsServiceMock = ItemsServiceMock()
+    lazy var itemsService: ItemServiceRepresentable = ItemsServiceMock()
     
     lazy var webService: WebServiceRepresentable = WebServiceMock()
-    
-    lazy var itemsService: ItemServiceRepresentable = ItemsServiceMock()
     
     lazy var dateFormatter: DateManagerRepresentable = DateManager()
     
@@ -63,12 +54,14 @@ class FactoryMock: Factory {
 }
 
 class WebServiceMock: WebServiceRepresentable {
+    var result: Result<Data, Error> = .success(Data())
+    
     func execute(_ url: URL?, result completion: @escaping (Result<Data, Error>) -> Void) {
-        completion(.success(Data()))
+        completion(result)
     }
     
     func execute(_ request: URLRequest?, result completion: @escaping (Result<Data, Error>) -> Void) {
-        completion(.success(Data()))
+        completion(result)
     }
 }
 

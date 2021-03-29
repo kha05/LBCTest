@@ -23,48 +23,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "431C04F9-41CF-4176-B57D-9AF6999C3C28"
+            uuid = "A61557E2-DE14-4116-80FC-153A823018CD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBCTest/App/Coordinators/ItemsCoordinator.swift"
+            filePath = "LBCTest/Services/Remote/ItemsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "deinit"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetchItems(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B1A95331-0232-4DFC-AE40-4AD0C3AC5AE9"
+            uuid = "4F48B790-D886-4D78-89BC-F274B368E457"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBCTest/App/SceneDelegate.swift"
+            filePath = "LBCTest/Services/Remote/ItemsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "scene(_:willConnectTo:options:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "fetchItems(completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F48B790-D886-4D78-89BC-F274B368E457 - 45ada067bebb64eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in LBCTest.ItemService.fetchItems(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Array&lt;LBCTest.Item&gt;, Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "LBCTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kha/Documents/Projet%20iOS/LBCTest/LBCTest/Services/Remote/ItemsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  uuid = "4F48B790-D886-4D78-89BC-F274B368E457 - 843bd3413f1865ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (LBCTest.ItemJSON) -&gt; Swift.Optional&lt;LBCTest.Item&gt; in closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in LBCTest.ItemService.fetchItems(completion: Swift.Optional&lt;(Swift.Result&lt;Swift.Array&lt;LBCTest.Item&gt;, Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "LBCTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kha/Documents/Projet%20iOS/LBCTest/LBCTest/Services/Remote/ItemsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA2694C7-3C3C-4EE3-AAEE-D6BFF047E6E9"
+            uuid = "01B77D54-B779-4C1D-AF10-F4ED0550CD44"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBCTest/App/Coordinators/ItemsCoordinator.swift"
+            filePath = "LBCTest/Services/Remote/ItemsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "start()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchItems(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

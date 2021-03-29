@@ -9,6 +9,7 @@ import Foundation
 
 protocol DateManagerRepresentable {
     func formatDateToString(date: Date) -> String
+    func formatStringToDateIso8601(string: String) -> Date?
 }
 
 final class DateManager: DateManagerRepresentable {
@@ -20,7 +21,17 @@ final class DateManager: DateManagerRepresentable {
         return dateFormatter
     }()
     
+    private lazy var isoDateFormatter: ISO8601DateFormatter = {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+    
     func formatDateToString(date: Date) -> String {
         return dateFormatter.string(from: date)
+    }
+    
+    func formatStringToDateIso8601(string: String) -> Date? {
+        return isoDateFormatter.date(from: string)
     }
 }

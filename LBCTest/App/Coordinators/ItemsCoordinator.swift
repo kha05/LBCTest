@@ -29,10 +29,6 @@ final class ItemsCoordinator: Coordinator {
         let viewController = factory.makeItemsViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
-    
-    deinit {
-        print("Coordinator deinit")
-    }
 }
 
 extension ItemsCoordinator: ItemsCoordinatorDelegate {

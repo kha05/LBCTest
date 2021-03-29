@@ -12,7 +12,7 @@ protocol ItemDetailViewModelRepresentable {
     var itemTitle: String { get }
     var itemDescription: String { get }
     var itemCategory: String { get }
-    var itemPrice: String { get }
+    var itemPrice: String? { get }
     var isUrgentItem: Bool { get }
     var itemDate: String { get }
     
@@ -23,16 +23,12 @@ final class ItemDetailViewModel: ItemDetailViewModelRepresentable {
     private let item: Item
     private let categoryName: String
     
-    private let itemService: ItemServiceRepresentable
-    private let imageService: ImagesServiceRepresentable
-    private let dateFormatter: DateManagerRepresentable
+    private let factory: ServiceFactory & HelperFactory
     
     init(item: Item, categoryName: String, factory: ServiceFactory & HelperFactory) {
         self.item = item
         self.categoryName = categoryName
-        self.itemService = factory.itemsService
-        self.imageService = factory.imageService
-        self.dateFormatter = factory.dateFormatter
+        self.factory = factory
     }
     
     var itemTitle: String {
@@ -47,8 +43,8 @@ final class ItemDetailViewModel: ItemDetailViewModelRepresentable {
         return categoryName
     }
     
-    var itemPrice: String {
-        return String("\(item.price) €")
+    var itemPrice: String? {
+        return factory.currencyFormatter.formatAmountToString(amount: item.price)
     }
     
     var isUrgentItem: Bool {
@@ -56,12 +52,12 @@ final class ItemDetailViewModel: ItemDetailViewModelRepresentable {
     }
     
     var itemDate: String {
-        let date = dateFormatter.formatDateToString(date: item.createdAt)
+        let date = factory.dateFormatter.formatDateToString(date: item.createdAt)
         return "Publié le \(date)"
     }
     
     func itemImage(completion: ((UIImage?) -> Void)?) {
-        imageService.fetchImage(from: item.imageThumbnailUrl) { (result) in
+        factory.imageService.fetchImage(from: item.imageThumbnailUrl) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):

@@ -45,6 +45,8 @@
 		EA900F312611236500E67346 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F302611236500E67346 /* DateManager.swift */; };
 		EA900F392611D3E600E67346 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F382611D3E600E67346 /* CurrencyFormatter.swift */; };
 		EA900F3F2611D43700E67346 /* HelperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F3E2611D43700E67346 /* HelperFactory.swift */; };
+		EA900F432611DCC400E67346 /* ItemsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F422611DCC400E67346 /* ItemsServiceTests.swift */; };
+		EA900F502612050D00E67346 /* CategoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA900F4F2612050D00E67346 /* CategoryServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		EA900F302611236500E67346 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		EA900F382611D3E600E67346 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		EA900F3E2611D43700E67346 /* HelperFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFactory.swift; sourceTree = "<group>"; };
+		EA900F422611DCC400E67346 /* ItemsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsServiceTests.swift; sourceTree = "<group>"; };
+		EA900F4F2612050D00E67346 /* CategoryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +160,10 @@
 		EA900DD5260F320300E67346 /* LBCTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				EA900F55261205F000E67346 /* Services */,
+				EA900F54261205E800E67346 /* ViewModels */,
+				EA900F53261205E100E67346 /* Mock */,
 				EA900DD8260F320300E67346 /* Info.plist */,
-				EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */,
-				EA900EC4260F937500E67346 /* EnvironmentMock.swift */,
 			);
 			path = LBCTestTests;
 			sourceTree = "<group>";
@@ -328,6 +333,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EA900F53261205E100E67346 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EA900EC4260F937500E67346 /* EnvironmentMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		EA900F54261205E800E67346 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA900EBF260F934B00E67346 /* ItemsViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EA900F55261205F000E67346 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA900F422611DCC400E67346 /* ItemsServiceTests.swift */,
+				EA900F4F2612050D00E67346 /* CategoryServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,8 +498,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA900F432611DCC400E67346 /* ItemsServiceTests.swift in Sources */,
 				EA900EC5260F937500E67346 /* EnvironmentMock.swift in Sources */,
 				EA900EC0260F934B00E67346 /* ItemsViewModelTests.swift in Sources */,
+				EA900F502612050D00E67346 /* CategoryServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

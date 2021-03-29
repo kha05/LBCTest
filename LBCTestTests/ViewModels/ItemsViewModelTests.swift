@@ -11,12 +11,16 @@ import XCTest
 @testable import LBCTest
 
 class ItemsViewModelTests: EnvironmentMock {
+    var synchronizationServiceMock: SynchronizationServiceMock!
+    var imageServiceMock: ImageServiceMock!
     var viewModel: ItemsViewModelRepresentable!
     var coordinatorMock: ItemsCoordinatorMock!
     
     override func setUp() {
         super.setUp()
-        self.viewModel = ItemsViewModel(factory: self.factoryMock)
+        self.viewModel = factoryMock.makeItemsViewModel()
+        self.synchronizationServiceMock = (factoryMock.synchronizationService as! SynchronizationServiceMock)
+        self.imageServiceMock = (factoryMock.imageService as! ImageServiceMock)
         self.coordinatorMock = ItemsCoordinatorMock()
         self.viewModel.coordinatorDelegate = coordinatorMock
     }
